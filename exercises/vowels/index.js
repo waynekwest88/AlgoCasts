@@ -7,6 +7,19 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+function vowels(str) {
+  var vowels = 0;
+
+  for (var i = 0; i < str.length; i++) {
+    var char = str[i].toLowerCase();
+    //since includes method has a linear time complexity, I chose using an if statement
+       //to reduce overall time complexity
+    if (char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u') {
+      vowels++;
+    }
+  }
+
+  return vowels;
+}
 
 module.exports = vowels;
