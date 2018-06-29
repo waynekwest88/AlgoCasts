@@ -13,7 +13,26 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4)
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
 
-function pyramid(n) {}
+function pyramid(n) {
+  var array = Array(n + (n - 1)).fill(' ');
+  
+  for (var i = 0; i < n; i++) {
+    var middle = Math.floor(array.length / 2);
+    var startRange = middle - i;
+    var endRange = middle + i;
+
+    if (i >= startRange || i <= endRange) {
+      array.fill('#', startRange, endRange + 1);
+    }
+
+    console.log(array.join(''));
+  }
+}
 
 module.exports = pyramid;
